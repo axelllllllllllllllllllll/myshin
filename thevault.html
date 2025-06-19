@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Vault</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      body {
+        background-color: #f2f2f2;
+        overflow-x: hidden;
+      }
+
+      .header-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      }
+
+      .header-text h1 {
+        font-size: clamp(2rem, 4vw, 4rem);
+      }
+
+      .account-balance {
+        width: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 10dvh auto;
+        gap: 60px;
+        padding: 32px;
+        background-color: rgb(37, 60, 80);
+        border-radius: 24px;
+      }
+
+      .balance-header h1 {
+        font-size: clamp(1.6rem, 4vw, 3rem);
+        color: #f2f2f2;
+      }
+
+      .balance-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 32px;
+        width: 90%;
+        background-color: rgb(74, 104, 129);
+        padding: 32px;
+        border-radius: 24px;
+      }
+
+      .info {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .info p {
+        font-size: clamp(1rem, 2vw, 2rem);
+        color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      .photo-container img {
+        width: clamp(300px, 20vw, 400px);
+        border-radius: 24px;
+        cursor: pointer;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          right: -100px;
+        }
+
+        100% {
+          opacity: 1;
+          right: 0;
+        }
+      }
+
+      .photo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px;
+        background-color: white;
+        border-radius: 24px;
+      }
+
+      .photo-container p {
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
+      }
+
+      .photo-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100dvw;
+        margin-top: 10dvh;
+      }
+
+      #page-loader {
+        position: fixed;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bg-image {
+        position: absolute;
+        z-index: -1;
+        width: 100dvw;
+        height: 100dvh;
+        background-image: url("heart-bg.png");
+        filter: brightness(0.5);
+        background-position: center;
+      }
+
+      #page-loader p {
+        color: #f2f2f2;
+        font-size: 2rem;
+      }
+
+      #page-loader.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #page-loader img {
+        padding-right: 2dvh;
+        width: 280px;
+      }
+
+      #image-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100dvw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      #image-modal img {
+        width: 35%;
+      }
+
+      #close-modal {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: #f2f2f2;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .account-balance {
+          width: 350px;
+        }
+
+        .photo-section {
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .photo-container img {
+          width: 330px;
+        }
+
+        #image-modal img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header-text">
+      <h1>Welcome to The Vault</h1>
+    </section>
+
+    <section class="account-balance">
+      <div class="balance-header">
+        <h1>Account Balance</h1>
+      </div>
+
+      <div class="balance-info">
+        <div class="info">
+          <p>Hugs:</p>
+          <p>UNLIMITED</p>
+        </div>
+        <div class="info">
+          <p>Kisses:</p>
+          <p>UNLIMITED</p>
+        </div>
+      </div>
+
+      <p
+        style="
+          margin: auto;
+          color: #f2f2f2;
+          text-align: center;
+          font-size: clamp(1rem, 2vw, 2rem);
+        "
+      >
+        *can be claimed everytime and anywhere
+      </p>
+
+      <a
+        style="
+          margin: auto;
+          color: #f2f2f2;
+          text-align: center;
+          font-size: clamp(1rem, 2vw, 2rem);
+        "
+        href="https://drive.google.com/drive/folders/1QAJuhwTAYQ3ixvVXwlCacD8AgwWjcbfb"
+        >Download your GF License here.</a
+      >
+    </section>
+
+    <section class="header-text">
+      <h1>Archives</h1>
+    </section>
+
+    <section style="margin-bottom: 10dvh" class="photo-section">
+      <div class="photo-container">
+        <img
+          class="clickable-image"
+          src="straw-hat-shin-with-zoan-axel.png"
+          alt=""
+        />
+        <p>Straw-hat Shin with Zoan Axel</p>
+      </div>
+
+      <div class="photo-container">
+        <img class="clickable-image" src="hearts.png" alt="" />
+        <p>Love is in the air</p>
+      </div>
+
+      <div class="photo-container">
+        <img
+          class="clickable-image"
+          src="engineer-shin-with-it-axel.png"
+          alt=""
+        />
+        <p>Engr. Martos with IT expert Axel</p>
+      </div>
+
+      <div id="image-modal">
+        <div id="close-modal">x</div>
+
+        <img src="" alt="" id="modal-image" />
+      </div>
+    </section>
+
+    <a
+      style="
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: palevioletred;
+        text-align: center;
+        font-size: clamp(1rem, 2vw, 2rem);
+        margin-bottom: 10dvh;
+      "
+      href="https://drive.google.com/drive/folders/1QAONdTZjqayIvZ15HLv1uiF5unkMSZ8v"
+      >Download photos here.</a
+    >
+
+    <div id="page-loader">
+      <div class="bg-image"></div>
+      <img src="strawhats-one-piece.gif" alt="" />
+      <p>loading</p>
+    </div>
+
+    <script>
+      window.onload = function () {
+        const pageloader = document.getElementById("page-loader");
+
+        setTimeout(() => {
+          pageloader.classList.add("hide");
+
+          setTimeout(() => {
+            pageloader.style.display = "none";
+            console.log("Page loader hidden after 3 seconds");
+          }, 500);
+        }, 1500);
+      };
+
+      const modal = document.getElementById("image-modal");
+      const modalImage = document.getElementById("modal-image");
+      const closeModal = document.getElementById("close-modal");
+      const images = document.querySelectorAll(".clickable-image");
+
+      images.forEach((image) => {
+        image.addEventListener("click", () => {
+          modal.style.display = "flex";
+          modalImage.src = image.src;
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

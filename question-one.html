@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <section class="question-cards">
+        <div class="question-number">
+            <h1>No. 1</h1>
+        </div>    
+
+        <div class="question-text">
+            <p>What is Axel's favorite color ?</p>
+        </div>
+
+        <div class="choices">
+            <button onclick="wrongAnswer()">Green</button>
+            <button  onclick="wrongAnswer()">Blue</button>
+            <button  onclick="wrongAnswer()">Gray</button>
+            <button  onclick="rightAnswerOne()">Red</button>
+        </div>
+    </section>
+
+    <div id="wrong-answer-section">
+        <h1 class="close-button" onclick="closeBtn()">&#10006</h1>
+        <img src="one-piece-luffy.gif" alt="">
+        <h1 style=" font-size: clamp(1rem, 1.6vw, 1.6rem);">Try Again</h1>
+    </div>
+
+     <div onclick="closeBtn()" id="overlay"></div>
+
+    <div id="page-loader">
+        <div class="bg-image"></div>
+        <img src="strawhats-one-piece.gif" alt="">
+        <p>loading</p>
+    </div>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>

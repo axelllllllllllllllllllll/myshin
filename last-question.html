@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <section class="question-cards">
+        <div class="question-number">
+            <h1>No. 5</h1>
+        </div>    
+
+        <div class="question-text">
+            <p>How many months have we been together ?</p>
+        </div>
+
+        <div class="choices">
+            <button onclick="wrongAnswer()">16</button>
+            <button onclick="rightAnswerFive()">18</button>
+            <button onclick="wrongAnswer()">17</button>
+            <button onclick="wrongAnswer()">19</button>
+        </div>
+    </section>
+
+    <div id="wrong-answer-section">
+        <h1 class="close-button" onclick="closeBtn()">&#10006</h1>
+       <img src="one-piece-zoro.gif" alt="">
+        <h1 style=" font-size: clamp(1rem, 1.6vw, 1.6rem);">Try Again</h1>
+    </div>
+
+     <div onclick="closeBtn()" id="overlay"></div>
+
+    <div id="page-loader">
+        <div class="bg-image"></div>
+        <img src="luffy-thumbs-up-luffy.gif" alt="">
+        <p style="color: #f2f2f2;">Great!!</p>
+    </div>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>

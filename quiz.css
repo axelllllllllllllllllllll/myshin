@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.welcome-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.welcome-section h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  color: #f2f2f2;
+  text-align: center;
+  line-height: 1.75;
+}
+
+.welcome-section h2 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #f2f2f2;
+  text-align: center;
+  line-height: 1.75;
+  font-weight: 200;
+}
+
+.welcome-section button,
+.congratulation-section button {
+  height: clamp(15px, 10vh, 100px);
+  width: clamp(150px, 40vw, 400px);
+  font-size: clamp(1rem, 2vw, 2rem);
+  border-radius: 100px;
+  border: none;
+  background-color: #ffd586;
+  color: black;
+  font-weight: bold;
+}
+
+.welcome-section button:hover,
+.congratulation-section button:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #ffe99a;
+  cursor: pointer;
+  box-shadow: 8px 8px 0 #fcc96b;
+}
+
+.question-cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 60vw, 800px);
+  min-height: clamp(375px, 40vh, 700px);
+  background-color: #ff9898;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  gap: 75px;
+  border-radius: 24px;
+  box-shadow: 16px 16px 0 #fa8383;
+}
+
+.question-number h1 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  color: #f2f2f2;
+}
+
+.question-text p {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  color: #f2f2f2;
+  text-align: center;
+}
+
+.choices {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.choices button {
+  min-width: clamp(40px, 40vw, 250px);
+  min-height: clamp(20px, 20vw, 60px);
+  border: none;
+  border-radius: 100px;
+  background-color: #ffd586;
+  font-weight: bolder;
+  font-size: clamp(1rem, 1.6vw, 1.6rem);
+  padding: 12px;
+}
+
+.choices button:hover {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  background-color: #ffe99a;
+  box-shadow: 8px 8px 0 #fcc96b;
+}
+
+#wrong-answer-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 65dvw;
+  min-height: 60dvh;
+  background-color: white;
+  border-radius: 24px;
+  padding: 12px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 2rem;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.congratulation-section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.congratulation-section h1 {
+  font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+  color: #f2f2f2;
+  text-align: center;
+  line-height: 1.75;
+}
+
+.congratulation-section h2 {
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #f2f2f2;
+  text-align: center;
+  line-height: 1.75;
+}
+
+#page-loader {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+#page-loader p{
+  color: #f2f2f2;
+  font-size: 2rem;
+}
+
+#wrong-answer-section img,
+#page-loader img,
+.congratulation-section img {
+  width: 270px;
+}
+
+#page-loader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#page-loader img {
+  padding-right: 2dvh;
+}
+
+.bg-image {
+  position: absolute;
+  z-index: -1;
+  width: 100dvw;
+  height: 100dvh;
+  background-image: url("heart-bg.png");
+  filter: brightness(0.5);
+  background-position: center;
+}
+
+#overlay{
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  color: hsla(0, 0%, 86%, 0.6);
+}
+
+@media screen and (max-width: 431px) {
+
+  .question-cards {
+    gap: 28px;
+  }
+
+  .choices{
+    flex-direction: column;
+  }
+
+  .choices button{
+    width: 200px;
+  }
+
+  #wrong-answer-section {
+    width: 80dvw;
+    height: 70dvh;
+  }
+
+  .gif-wrapper {
+    width: 320px;
+  }
+}

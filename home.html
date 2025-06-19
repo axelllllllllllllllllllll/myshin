@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iloveshin.com</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="x-logo">
+            <h1 onclick="closeSide()"><span style="color: red;">&#10006</span></h1>
+        </div>
+
+        <div class="side-links">
+            <a href="home.html">
+                <img src="home-btn.png" alt="">
+                Home
+            </a>
+            <a href="#about">
+                <img src="about-btn.png" alt="">
+                About
+            </a>
+            <a href="#music">
+                <img src="music-btn.png" alt="">
+                Music
+            </a>
+            <a href="#letter">
+                <img src="envelope-btn.png" alt="">
+                Letter
+            </a>
+        </div>
+    </nav>
+
+    <div class="navigation">
+        <div class="logo">
+            <h1 style="color: #333333;">ilove<span style="color: red;">shin</span></h1>
+        </div>
+
+        <div class="nav-links">
+            <a class="hide-on-mobile" href="home.html">
+                <img src="home-btn.png" alt="">
+            </a>
+            <a class="hide-on-mobile" href="#about">
+                <img src="about-btn.png" alt="">
+            </a>
+            <a class="hide-on-mobile" href="#music">
+                <img src="music-btn.png" alt="">
+            </a>
+            <a class="hide-on-mobile" href="#letter">
+                <img src="envelope-btn.png" alt="">
+            </a>
+            <h1 onclick="showSide()" class="show-on-mobile">&#9776</h1>
+        </div>
+    </div>
+
+    <div onclick="closeSide()" id="overlay"></div>
+
+    <div id="page-loader">
+      <div class="bg-image"></div>
+      <img src="strawhats-one-piece.gif" alt="" />
+      <p>loading</p>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+
+        <div class="hero-text">
+            <h1>My Girl</h1>
+            <p>Gleshelyn Shin R. Martos</p>
+        </div>
+
+        <div class="hero-img">
+            <img src="shin-transparent-bg-02-helmet.png" alt="">
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="jumbo-text">
+            <h1 id="about">About</h1>
+        </div>
+
+        <div class="about-section-text">
+           <p>This is website is made for my one and only, Gleshelyn Shin R. Martos.</p>
+        </div>
+
+        <div class="what-to-see">
+            <div class="what-to-see-img">
+                <img src="shin-with-luffy.png" alt="">
+            </div>
+
+            <div class="what-to-see-text">
+                <h1 class="header-text">What to see?</h1>
+
+                <p>Home - the first section of the webpage</p>
+                <p>About - contains the information about the website</p>
+                <p>Music - a song dedicated for my lovely Shin, a song that reminds me of her</p>
+                <p>Letter - a letter for our monthsarry, written for Shin</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="music-section">
+        <div class="jumbo-text">
+            <h1 id="music">Music</h1>
+        </div>
+
+        <div class="music-container">
+            <div class="music-title">
+                <h1>Love Is</h1>
+                <p>The Ridleys</p>
+            </div>
+
+            <div class="music-img">
+                <img src="1750167258253.jpg" alt="">
+            </div>
+
+            <div class="audio-container">
+                <audio id="audio" src="Love Is (Live at The Cozy Cove) - The Ridleys.mp3"></audio>
+                <div class="button-container">
+                    <img id="pause-btn" onclick="pauseBtn()" width="100px" src="pause-btn.png" alt="">
+                    <img id="play-btn" onclick="playBtn()" width="100px" src="play-btn.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="letter-section">
+        <div style="display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column
+        ;" class="jumbo-text">
+            <h1 id="letter">Letter</h1>
+            <p style="font-size: clamp(1rem, 2vw, 2rem); color: #333333; padding-bottom: 10dvh;">Tap to zoom-in</p>
+        </div>
+
+        <div class="letter-container">
+            <img class="clickable-image-2" style="cursor: pointer;" src="page-1.png" alt="">
+            <img class="clickable-image-2" style="cursor: pointer;" src="page-2.png" alt="">
+        </div>
+
+        <div id="image-modal-2">
+            <div id="close-modal">
+                x
+            </div>
+
+            <img src="" alt="" id="modal-image-2">
+        </div>
+    </section>
+
+    <section class="gf-card-container">
+
+         <div style="margin-top: 20dvh;" class="jumbo-text">
+            <h1>GF License</h1>
+        </div>
+
+        <div class="gf-card-img">
+            <img class="clickable-image" src="Girlfriend Lisce_20250619_000725_0000.png" alt="">
+        </div>
+
+        <div class="form-details">
+            <h1>Enter your gf license No.</h1>
+            <input id="gfNum" type="number">
+        </div>
+
+        <div id="image-modal">
+            <div id="close-modal">
+                x
+            </div>
+
+            <img src="" alt="" id="modal-image">
+        </div>
+
+        <button onclick="submitBtn()">Submit</button>
+    </section>
+
+    <script>
+        const sidebar = document.getElementById("sidebar")
+        sidebar.style.display = "none"
+
+        const overlay = document.getElementById("overlay")
+        overlay.style.display = "none"
+
+        function showSide(){
+            sidebar.style.display = "flex"
+            overlay.style.display = "flex"
+        }
+
+        function closeSide(){
+            sidebar.style.display = "none"
+            overlay.style.display = "none"
+        }
+
+        window.onload = function () {
+        const pageloader = document.getElementById("page-loader");
+
+        setTimeout(() => {
+            pageloader.classList.add("hide");
+
+            setTimeout(() => {
+            pageloader.style.display = "none";
+            console.log("Page loader hidden after 3 seconds");
+            }, 500);
+         }, 1500);
+        };
+
+        const play = document.getElementById("play-btn");
+        const pause = document.getElementById("pause-btn");
+        pause.style.display = "none";
+        const audio = document.getElementById("audio");
+
+        function playBtn(){
+            audio.play()
+            pause.style.display = "flex";
+            play.style.display = "none";
+        }
+
+        function pauseBtn(){
+            audio.pause()
+            pause.style.display = "none";
+            play.style.display = "flex";
+        }
+
+        function submitBtn() {
+    const gfNum = Number(document.getElementById("gfNum").value);
+    if (gfNum === 2124122406) {
+        location.assign("thevault.html");
+    } else {
+        alert("Please Try Again")
+    }
+}
+
+    const modal = document.getElementById("image-modal")
+    const modalImage = document.getElementById("modal-image")
+    const closeModal = document.getElementById("close-modal")
+    const images = document.querySelectorAll(".clickable-image")
+
+    images.forEach((image) =>  {
+        image.addEventListener("click", () => {
+            modal.style.display = "flex"
+            modalImage.src = image.src
+        })
+    })
+
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none"
+    })
+
+    const modal2 = document.getElementById("image-modal-2")
+    const modalImage2 = document.getElementById("modal-image-2")
+    const closeModal2 = document.getElementById("close-modal")
+    const images2 = document.querySelectorAll(".clickable-image-2")
+
+    images2.forEach((image) =>  {
+        image.addEventListener("click", () => {
+            modal2.style.display = "flex"
+            modalImage2.src = image.src
+        })
+    })
+
+    closeModal2.addEventListener("click", () => {
+        modal2.style.display = "none"
+    })
+
+    </script>
+
+  </body>
+</html>

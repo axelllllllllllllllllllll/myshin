@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <div class="bg-image"></div>
+
+    <section class="question-cards">
+        <div class="question-number">
+            <h1>No. 3</h1>
+        </div>    
+
+        <div class="question-text">
+            <p>Where is our first date ?</p>
+        </div>
+
+        <div class="choices">
+            <button onclick="wrongAnswer()">SM Sta. Rosa</button>
+            <button onclick="wrongAnswer()">McDonald's</button>
+            <button onclick="wrongAnswer()">Chowking</button>
+            <button onclick="rightAnswerThree()">Bahay ni Rizal</button>
+        </div>
+    </section>
+
+    <div id="wrong-answer-section">
+        <h1 class="close-button" onclick="closeBtn()">&#10006</h1>
+        <img src="e.gif" alt="">
+        <h1 style=" font-size: clamp(1rem, 1.6vw, 1.6rem);">Try Again</h1>
+    </div>
+
+     <div onclick="closeBtn()" id="overlay"></div>
+
+    <div id="page-loader">
+        <div class="bg-image"></div>
+        <img src="luffy-thumbs-up-luffy.gif" alt="">
+        <p style="color: #f2f2f2;">Great!!</p>
+    </div>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>
