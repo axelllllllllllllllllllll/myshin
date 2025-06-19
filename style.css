@@ -394,7 +394,7 @@ html {
   width: 50%;
 }
 
-#close-modal {
+#close-modal, #close-modal2 {
   position: absolute;
   top: 20px;
   right: 30px;
